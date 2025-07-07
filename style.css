@@ -1,0 +1,174 @@
+body {
+  background-color: #fffaf0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+#toggle-button {
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px 20px;
+  background-color: #f0f0f0;
+}
+
+.dark-mode-toggle {
+  position: relative;
+  width: 100px;
+  height: 34px;
+  border-radius: 17px;
+  background-color: #ccc;
+  transition: background-color 0.3s;
+  cursor: pointer;
+}
+
+#inner-button {
+  display: flex;
+  justify-content: space-between;
+}
+
+.toggle-inner {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #fff;
+  transition: transform 0.3s;
+}
+
+.toggle-text {
+  position: absolute;
+  top: 50%;
+  left: 80%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  font-size: 14px;
+}
+
+body.dark-mode {
+  background-color: #1e1e1e;
+  color: #eee;
+}
+
+.dark-mode-toggle.active {
+  background-color: lightblue;
+}
+
+.dark-mode-toggle.active .toggle-inner {
+  transform: translateX(66px);
+}
+
+.Heading {
+  font-weight: bold;
+  font-size: 40px;
+  text-align: center;
+  margin: 20px 0;
+  color: #333;
+}
+
+#grid-container {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  gap: 10px;
+  padding: 10px;
+}
+
+.playList, .allSongs, .card {
+  padding: 1rem;
+  margin: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  background-color: lightblue;
+}
+
+.displaySong button,
+.playList-button,
+.song-button,
+.backward,
+.forward,
+.addPlay,
+.createPlaylist {
+  padding: 10px;
+  margin: 8px 0;
+  width: 100%;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  background-color: #6699cc;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.displaySong button:hover,
+.playList-button:hover,
+.song-button:hover,
+.backward:hover,
+.forward:hover,
+.addPlay:hover,
+.createPlaylist:hover {
+  background-color: #336699;
+}
+
+.audio-pic {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.audio-pic img {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  border-radius: 10px;
+}
+
+.audioFile audio {
+  width: 100%;
+}
+
+.search-bar {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+#playlist {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  #grid-container {
+    grid-template-columns: 1fr;
+  }
+
+  .playList, .allSongs, .card {
+    width: 100%;
+    margin: 0 auto 20px auto;
+  }
+
+  .toggle-text {
+    display: none;
+  }
+
+  .audio-pic img {
+    width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .Heading {
+    font-size: 28px;
+  }
+
+  .createPlaylist, .addPlay, .backward, .forward {
+    font-size: 14px;
+    padding: 8px;
+  }
+}
